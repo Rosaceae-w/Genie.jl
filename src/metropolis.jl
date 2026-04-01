@@ -95,7 +95,7 @@ function run_metropolis_indels!(chains,
         new_codon = proposed_codon(chains[n], all_codons, seq_site)
         #mutated_seq = SeqToEvolve(chains[n].seq, chains[n].DNA)
         #metro_del_ins_step(chains[n], seq_site, new_codon, h, J, L, temp)
-        metropolis_indels!(chains[n], new_codon, seq_site, h, J, codon_usage, temp, L)
+        metropolis_indels!(chains[n], new_codon, seq_site, h, J, codon_usage, temp, L, accpeted_mutation_num)
     end 
     
 end
