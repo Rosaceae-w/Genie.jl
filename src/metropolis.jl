@@ -71,6 +71,7 @@ function metropolis_indels!(chain,
         if rand(chain.generator) < accept_proba
             chain.seq[seq_site] = new_amino
             chain.DNA[seq_site] = new_codon  
+			println("one accepted mutation") # Ruoxi
         end
     end  
     
