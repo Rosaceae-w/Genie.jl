@@ -42,7 +42,8 @@ function metropolis_indels!(chain,
         J::Array{T,4},
         codon_usage::Dict{String, T},
         temp::T,
-        L::Int) where {T}
+        L::Int
+		accpeted_mutation_num) where {T}
      
     
     if new_codon == "TAA"  ||  new_codon == "TAG"   || new_codon == "TGA"  || new_codon == chain.seq[seq_site] || new_codon == nothing
@@ -72,6 +73,7 @@ function metropolis_indels!(chain,
             chain.seq[seq_site] = new_amino
             chain.DNA[seq_site] = new_codon  
 			println("one accepted mutation") # Ruoxi
+			accpeted_mutation_num+=1 # Ruoxi
         end
     end  
     
